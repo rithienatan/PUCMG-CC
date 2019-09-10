@@ -1,2 +1,2 @@
-# Ci-ncia-da-Computa-o---Gradua-o
-Todos os trabalhos feitos ao longo do curso
+# PUCMG-CC
+Todos os trabalhos feitos ao longo do curso de Ciência da Computação(Puc Minas Coração Eucarístico)
