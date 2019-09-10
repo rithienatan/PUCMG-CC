@@ -1,2 +1,2 @@
 # PUCMG-CC
-Todos os trabalhos feitos ao longo do curso de Ciência da Computação(Puc Minas Coração Eucarístico)
+All work made on university of Science Computer on campus Puc Minas Coração Eucarístico)
