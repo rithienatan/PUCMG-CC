@@ -1,0 +1,33 @@
+Pergunta 1
+
+Em relação às arquiteturas SIMD ("single instruction multiple data"), marque a alternativa ERRADA.
+
+R: Multicores são arquiteturas MIMD, pois não possuem instruções SIMD. 
+
+----------------------------------------------------//-----------------------------------------------
+
+Pergunta 2
+
+Em relação a organização de arquiteturas multiprocessadas (MIMD com memória compartilhada), podemos afirmar que:
+
+i. Possui geralmente acesso a memória não uniforme (NUMA - Non-uniform memory access), pois o tempo de acesso a um dado depende da localização do dado.
+ii. O modelo PRAM (Parallel Random Access Machine) assume que o tempo de acesso às memórias é não uniforme.
+iii. Um processador pode acessar dados de memórias conectadas a outros processadores por meio de canais de comunicação.
+iv. Cada processador é conectado a um banco de memória.
+v. O protocolo de coerência entre as caches garante alto desempenho entre processadores que acessam os mesmos dados.
+
+R: apenas i, iii, iv são afirmativas corretas. 
+
+----------------------------------------------------//-----------------------------------------------
+
+Pergunta 3
+
+Nas últimas décadas, o desempenho de processadores (CPUs) tem crescido em uma velocidade maior que o desempenho da memória RAM. Este "memory wall" faz com que processadores com desempenho muito superior a memória passem a maioria do tempo esperando por dados sendo buscados na memória, ao invés de realizarem computação. Uma forma de aliviar este problema em arquiteturas paralelas é criar aplicações paralelas que especificam uma quantidade de paralelismo extra ("parallel slack") acima do mínimo necessário para utilizar os recursos de hardware, ou seja, dividir a quantidade de trabalho em um número de pedaços que seja maior que a quantidade de núcleos disponíveis. Como este paralelismo extra pode ser aproveitado pelo software ou hardware para reduzir o impacto do "memory wall"? Dada as afirmativas abaixo, marque a alternativa CORRETA.
+
+i. Para reduzir a quantidade de trabalho realizada por thread em relação ao número de acessos a memória.
+ii. Para esconder a latência de acesso aos dados na memória por meio de multithreading em hardware.
+iii. Para dividir os pedaços em tamanhos que caibam nas linhas da memória cache, aumentando a localidade de dados.
+iv. Caso uma thread fique parada esperando dados da memória, o escalonador de tarefas pode atribuir outro pedaço (tarefa) para ela executar enquanto o dado não estiver disponível.
+v. Para diminuir a sobrecarga ("overhead") de escalonamento, alocando um número mínimo de tarefas próximo ao número total de núcleos.
+
+R: apenas ii, iii, iv são afirmativas corretas. 

@@ -1,0 +1,73 @@
+1. create table Pais(codPais int not null, NomePais char(30) not null, constraint pk_Pais primary key (codPais));
+
+2. desc Pais; //Viewer
+
+3. insert into Pais values(1, 'Brasil');
+
+4. insert into Pais values(1, 'Portugal');
+
+5. insert into Pais(2, 'Portugal');
+
+6. commit;
+
+7. select * from Pais;
+
+8. select NomePais from Pais Order by NomePais desc;
+
+----------------------------------------------------------
+
+9. commit;
+
+10. insert into Pais values(3, 'Alemanha');
+
+11. select * from Pais;
+
+12. rollback;
+
+13. select * from Pais;
+
+14. insert into Pais values(3);
+
+15. insert into Pais values(3, 'Alemanha');
+
+16. insert into Pais values(4, 'Chile');
+
+17. select * from Pais Order by NomePais;
+
+18. commit;
+
+------------------------------------------------------------
+
+19. create table Autor
+    (codAutor int not null, 
+     nomeAutor char(35) not null,
+     codPais int not null,
+     constraint pk_Autor primary key(codAutor),
+     constraint fk_Pais_Autor foreign key(codPais) references Pais);
+
+20. insert into Autor values(1, 'Machado de Assis', 1);
+
+21. insert into Autor values(2, 'José Luis do Rego');
+
+22. insert into Autor values(2, 'José Luis do Rego', 9);
+
+23. insert into Autor values(2, 'José Luis do Rego', 1);
+
+24. insert into Autor values(3, 'Pablo Neruda', 4);
+
+25. select * from Autor;
+
+26. commit;
+
+27. select NomePais, NomeAutor from Autor join Pais on Autor.codPais=Pais.codPais order by NomePais, NomeAutor;
+
+28. select * from Pais join Autor on Pais.codPais = Autor.codPais;
+
+29. select * from Pais natural join Autor;
+
+30. delete from Pais where codPais = 1;
+
+31. drop table Autor;
+    drop table Pais;
+
+32. Exercício no SGA;

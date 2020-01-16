@@ -1,0 +1,24 @@
+Pergunta 1
+
+Em relação ao padrão Fork-Join, podemos afirmar que:
+
+i. Após a barreira na operação "join", todas as threads continuam suas execuções em paralelo.
+ii. É possível que vários Fork-Join sejam aninhados (nesting).
+iii. Todas as threads escravas executam o mesmo código.
+iv. Todas as threads escravas gastam o mesmo tempo de execução na região paralela.
+
+R: apenas ii e iii são afirmativas corretas. 
+
+---------------------------------//-----------------------------------------------------------------
+
+Pergunta 3
+
+Os padrões de programação paralela capturam estruturas comuns a programas paralelos. Eles permitem que desenvolvedores no nível de aplicação abstraiam detalhes específicos dos modelos de programação e arquiteturas paralelas ao projetarem uma aplicação paralela. Portanto, estes programadores passam a concentrar-se apenas no projeto do algoritmo de alto nível, NÃO se preocupando necessariamente com detalhes tais como:
+
+i. Criação e sincronização de threads.
+ii. Balanceamento de carga de trabalho entre threads.
+iii. Afinidade de memória.
+iv. Dependências de dados.
+v. Semântica dos padrões de programação paralela.
+
+R: apenas i, ii e iii são afirmativas corretas.

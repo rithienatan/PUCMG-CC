@@ -1,0 +1,5 @@
+Número digitado: 5
+Divisores: 5
+Divisores: 1
+Divisores: -1
+Divisores: -5

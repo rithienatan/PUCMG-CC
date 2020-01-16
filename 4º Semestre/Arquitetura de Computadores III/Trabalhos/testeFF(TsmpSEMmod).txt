@@ -1,0 +1,287 @@
+teste fft.mips
+smp.conf sem estar modificado
+
+1) # Bench : ./sesc.smp -c smp.conf splash/fft.mips -p2 -m4 
+# File  : sesc_fft.mips.lWTG5b :       Wed May 16 14:16:58 2018
+      Exe Speed        Exe MHz         Exe Time         Sim Time (5000MHz)
+    284.800 KIPS      4.8482 MHz       0.030 secs       0.029 msec
+Proc  Avg.Time BPType       Total          RAS           BPred          BTB            BTAC
+   0   287.268  hybrid       52.03% ( 76.36% of   5.89%)  50.51% ( 62.17% of  32.55%)   0.00% 
+   1   231.259  hybrid       66.53% ( 77.78% of   1.81%)  66.32% ( 79.19% of  34.88%)   0.00% 
+           nInst     BJ    Load   Store      INT      FP  : LD Forward , Replay : Worst Unit (clk)
+   0        5340  17.49%  16.22%  11.16%  50.00%   4.78%  :      7.04%     254 inst/repl  :  LDSTIssueX 0.45 
+   1        3204  15.48%  15.11%   9.83%  51.12%   7.90%  :      8.06%     200 inst/repl  :  ALUIssueX 0.38 
+Proc  IPC  Active       Cycles  Busy   LDQ   STQ  IWin   ROB  Regs Ports   TLB  maxBr MisBr Br4Clk  Other
+   0  0.04 100.00       145445   0.9   0.0   0.0   0.1   0.0   0.0   0.0   0.0   0.0   98.9    0.0    0.1 
+   1  0.06  34.57        50279   1.6   0.0   0.0   0.3   0.9   0.1   0.0   0.0   0.0   97.0    0.0    0.1 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  DL1 0.0   6.54% ( 3.6%, 3.0%) 62.16%  0.10GB/s :  L1L2 1020.85 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   1  DL1 0.0   6.68% ( 3.5%, 3.1%) 33.73%  0.06GB/s :  L1L2 1020.85 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  IL1 0.0  21.47% (21.5%, 0.0%) 70.20%  0.38GB/s :  L1L2 1020.85 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   1  IL1 0.0  16.50% (16.5%, 0.0%) 39.66%  0.16GB/s :  L1L2 1020.85 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+
+2)# Bench : ./sesc.smp -c smp.conf splash/fft.mips -p1 -m4 
+# File  : sesc_fft.mips.jnn3Lf :       Wed May 16 14:26:29 2018
+      Exe Speed        Exe MHz         Exe Time         Sim Time (5000MHz)
+    350.100 KIPS      7.4229 MHz       0.020 secs       0.030 msec
+Proc  Avg.Time BPType       Total          RAS           BPred          BTB            BTAC
+   0   280.354  hybrid       60.02% ( 77.97% of   5.25%)  59.02% ( 71.16% of  33.66%)   0.00% 
+           nInst     BJ    Load   Store      INT      FP  : LD Forward , Replay : Worst Unit (clk)
+   0        7002  16.04%  15.67%  11.01%  49.79%   7.24%  :     11.21%     143 inst/repl  :  LDSTIssueX 0.40 
+Proc  IPC        Cycles  Busy   LDQ   STQ  IWin   ROB  Regs Ports   TLB  maxBr MisBr Br4Clk  Other
+   0  0.05       148458   1.2   0.0   0.0   0.2   0.6   0.3   0.0   0.0   0.0   97.6    0.0    0.1 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  DL1 0.0   5.49% ( 2.9%, 2.6%) 93.63%  0.10GB/s :  L1L2 1194.13 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  IL1 0.0  16.80% (16.8%, 0.0%) 108.61%  0.37GB/s :  L1L2 1194.13 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s :
+
+3)# Bench : ./sesc.smp -c smp.conf splash/fft.mips -p2 -m8 
+# File  : sesc_fft.mips.qkllRz :       Wed May 16 14:31:07 2018
+      Exe Speed        Exe MHz         Exe Time         Sim Time (5000MHz)
+    694.773 KIPS      1.7094 MHz       0.110 secs       0.038 msec
+Proc  Avg.Time BPType       Total          RAS           BPred          BTB            BTAC
+   0   232.658  hybrid       87.72% ( 80.60% of   1.37%)  87.82% ( 94.06% of  38.11%)   0.00% 
+   1   152.638  hybrid       92.66% ( 90.48% of   0.47%)  92.67% ( 98.20% of  38.85%)   0.00% 
+           nInst     BJ    Load   Store      INT      FP  : LD Forward , Replay : Worst Unit (clk)
+   0       39320  12.47%  14.04%  10.12%  46.03%  17.30%  :      2.19%    2458 inst/repl  :  ALUIssueX 0.66 
+   1       37105  11.97%  13.81%   9.97%  45.87%  18.33%  :      2.05%    3092 inst/repl  :  ALUIssueX 0.70 
+Proc  IPC  Active       Cycles  Busy   LDQ   STQ  IWin   ROB  Regs Ports   TLB  maxBr MisBr Br4Clk  Other
+   0  0.21 100.00       188031   5.2   0.0   0.0   6.3   2.7   2.6   0.0   0.0   0.0   82.9    0.0    0.3 
+   1  0.40  49.39        92865  10.0   0.0   0.0  12.7   6.0   5.3   0.0   0.0   0.0   65.5    0.0    0.5 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  DL1 0.0   4.00% ( 2.5%, 1.5%) 51.20%  0.32GB/s :  L1L2 3751.68 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   1  DL1 0.0   3.81% ( 2.4%, 1.4%) 47.61%  0.28GB/s :  L1L2 3751.68 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  IL1 0.0   3.45% ( 3.4%, 0.0%) 57.15%  0.31GB/s :  L1L2 3751.68 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   1  IL1 0.0   1.71% ( 1.7%, 0.0%) 53.29%  0.14GB/s :  L1L2 3751.68 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s :
+
+4)# Bench : ./sesc.smp -c smp.conf splash/fft.mips -p1 -m8 
+# File  : sesc_fft.mips.7Vo87x :       Wed May 16 14:34:20 2018
+      Exe Speed        Exe MHz         Exe Time         Sim Time (5000MHz)
+    615.217 KIPS      1.9315 MHz       0.120 secs       0.046 msec
+Proc  Avg.Time BPType       Total          RAS           BPred          BTB            BTAC
+   0   209.011  hybrid       91.93% ( 84.34% of   0.94%)  92.00% ( 96.97% of  40.48%)   0.00% 
+           nInst     BJ    Load   Store      INT      FP  : LD Forward , Replay : Worst Unit (clk)
+   0       73826  11.91%  14.04%  10.18%  45.42%  18.43%  :      2.34%    2171 inst/repl  :  ALUIssueX 0.70 
+Proc  IPC        Cycles  Busy   LDQ   STQ  IWin   ROB  Regs Ports   TLB  maxBr MisBr Br4Clk  Other
+   0  0.32       231783   8.0   0.0   0.0  10.5  10.8   1.8   0.0   0.0   0.0   68.6    0.0    0.4 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  DL1 0.0   2.65% ( 1.7%, 1.0%) 98.66%  0.32GB/s :  L1L2 5505.13 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  IL1 0.0   1.80% ( 1.8%, 0.0%) 109.31%  0.24GB/s :  L1L2 5505.13 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s :
+
+5)# Bench : ./sesc.smp -c smp.conf splash/fft.mips -p4 -m4 
+# File  : sesc_fft.mips.YzM7jj :       Wed May 16 14:51:01 2018
+      Exe Speed        Exe MHz         Exe Time         Sim Time (5000MHz)
+    317.150 KIPS      3.5778 MHz       0.040 secs       0.029 msec
+Proc  Avg.Time BPType       Total          RAS           BPred          BTB            BTAC
+   0   282.315  hybrid       49.15% ( 72.73% of   6.24%)  47.58% ( 56.37% of  29.40%)   0.00% 
+   1   253.181  hybrid       69.30% ( 71.43% of   1.49%)  69.26% ( 77.85% of  33.69%)   0.00% 
+   2   253.273  hybrid       71.59% ( 71.43% of   1.29%)  71.59% ( 81.48% of  34.87%)   0.00% 
+   3   243.460  hybrid       60.73% ( 71.43% of   1.71%)  60.55% ( 72.00% of  30.49%)   0.00% 
+           nInst     BJ    Load   Store      INT      FP  : LD Forward , Replay : Worst Unit (clk)
+   0        4747  18.56%  16.58%  10.74%  51.00%   2.72%  :      2.16%     678 inst/repl  :  LDSTIssueX 0.42 
+   1        2707  17.33%  15.48%   8.68%  53.16%   4.69%  :      2.39%     677 inst/repl  :  ALUIssueX 0.31 
+   2        2851  19.01%  14.91%   7.79%  53.17%   4.45%  :      2.35%     713 inst/repl  :  ALUIssueX 0.33 
+   3        2381  17.22%  14.99%   9.45%  52.16%   5.33%  :      2.80%     595 inst/repl  :  LDSTIssueX 0.34 
+Proc  IPC  Active       Cycles  Busy   LDQ   STQ  IWin   ROB  Regs Ports   TLB  maxBr MisBr Br4Clk  Other
+   0  0.03 100.00       143111   0.8   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   99.1    0.0    0.1 
+   1  0.06  33.43        47837   1.4   0.0   0.0   0.1   0.0   0.1   0.0   0.0   0.0   98.3    0.0    0.1 
+   2  0.06  32.99        47216   1.5   0.0   0.0   0.2   0.0   0.0   0.0   0.0   0.0   98.2    0.0    0.1 
+   3  0.05  32.99        47218   1.3   0.0   0.0   0.2   0.0   0.0   0.0   0.0   0.0   98.5    0.0    0.1 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  DL1 0.0   7.58% ( 4.5%, 3.0%) 40.24%  0.11GB/s :  L1L2 960.353 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   1  DL1 0.0   8.19% ( 4.9%, 3.2%) 20.34%  0.06GB/s :  L1L2 960.353 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   2  DL1 0.0   7.81% ( 5.0%, 2.8%) 20.12%  0.06GB/s :  L1L2 960.353 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   3  DL1 0.0   8.87% ( 5.2%, 3.7%) 18.08%  0.06GB/s :  L1L2 960.353 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  IL1 0.0  24.10% (24.1%, 0.0%) 44.48%  0.38GB/s :  L1L2 960.353 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   1  IL1 0.0  18.54% (18.5%, 0.0%) 23.73%  0.16GB/s :  L1L2 960.353 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   2  IL1 0.0  16.44% (16.4%, 0.0%) 25.24%  0.15GB/s :  L1L2 960.353 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   3  IL1 0.0  18.76% (18.8%, 0.0%) 21.28%  0.14GB/s :  L1L2 960.353 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+
+6)# Bench : ./sesc.smp -c smp.conf splash/fft.mips -p4 -m8 
+# File  : sesc_fft.mips.vlmf6i :       Wed May 16 14:52:23 2018
+      Exe Speed        Exe MHz         Exe Time         Sim Time (5000MHz)
+    592.071 KIPS      1.2040 MHz       0.140 secs       0.034 msec
+Proc  Avg.Time BPType       Total          RAS           BPred          BTB            BTAC
+   0   235.378  hybrid       80.58% ( 75.41% of   2.01%)  80.69% ( 89.84% of  37.05%)   0.00% 
+   1   168.566  hybrid       89.04% ( 84.62% of   0.51%)  89.06% ( 96.59% of  38.92%)   0.00% 
+   2   168.970  hybrid       88.95% ( 84.62% of   0.48%)  88.97% ( 96.57% of  39.06%)   0.00% 
+   3   173.279  hybrid       88.56% ( 84.62% of   0.51%)  88.58% ( 96.44% of  38.83%)   0.00% 
+           nInst     BJ    Load   Store      INT      FP  : LD Forward , Replay : Worst Unit (clk)
+   0       22362  13.54%  14.01%   9.89%  47.25%  15.22%  :      1.75%    3195 inst/repl  :  ALUIssueX 0.60 
+   1       20145  12.73%  13.60%   9.64%  47.07%  16.88%  :      1.72%    5036 inst/repl  :  ALUIssueX 0.67 
+   2       20465  13.13%  13.54%   9.41%  47.20%  16.62%  :      1.70%    5116 inst/repl  :  ALUIssueX 0.66 
+   3       19918  12.72%  13.52%   9.68%  46.90%  17.08%  :      1.93%    4980 inst/repl  :  ALUIssueX 0.68 
+Proc  IPC  Active       Cycles  Busy   LDQ   STQ  IWin   ROB  Regs Ports   TLB  maxBr MisBr Br4Clk  Other
+   0  0.13 100.00       168556   3.3   0.0   0.0   3.4   0.8   2.3   0.0   0.0   0.0   90.0    0.0    0.2 
+   1  0.27  43.48        73286   6.9   0.0   0.0   7.9   1.2   5.6   0.0   0.0   0.0   78.0    0.0    0.4 
+   2  0.28  43.11        72666   7.0   0.0   0.0   7.9   1.7   5.1   0.0   0.0   0.0   77.9    0.0    0.4 
+   3  0.27  43.11        72668   6.9   0.0   0.0   7.9   1.2   5.7   0.0   0.0   0.0   78.0    0.0    0.4 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  DL1 0.0   5.01% ( 3.1%, 1.9%) 27.35%  0.25GB/s :  L1L2 2455.67 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   1  DL1 0.0   4.70% ( 3.0%, 1.7%) 23.96%  0.21GB/s :  L1L2 2455.67 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   2  DL1 0.0   4.60% ( 2.9%, 1.7%) 24.05%  0.20GB/s :  L1L2 2455.67 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   3  DL1 0.0   4.72% ( 3.0%, 1.8%) 23.63%  0.21GB/s :  L1L2 2455.67 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  IL1 0.0   5.97% ( 6.0%, 0.0%) 31.34%  0.34GB/s :  L1L2 2455.67 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   1  IL1 0.0   2.93% ( 2.9%, 0.0%) 27.69%  0.15GB/s :  L1L2 2455.67 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   2  IL1 0.0   2.82% ( 2.8%, 0.0%) 28.18%  0.15GB/s :  L1L2 2455.67 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   3  IL1 0.0   2.72% ( 2.7%, 0.0%) 27.40%  0.14GB/s :  L1L2 2455.67 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+
+7)# Bench : ./sesc.smp -c smp.conf splash/fft.mips -p2 -m4 -n1000 
+# File  : sesc_fft.mips.EKPJ6N :       Wed May 16 14:53:08 2018
+      Exe Speed        Exe MHz         Exe Time         Sim Time (5000MHz)
+    298.867 KIPS      4.8921 MHz       0.030 secs       0.029 msec
+Proc  Avg.Time BPType       Total          RAS           BPred          BTB            BTAC
+   0   275.203  hybrid       54.09% ( 75.00% of   5.84%)  52.79% ( 65.38% of  32.88%)   0.00% 
+   1   231.127  hybrid       66.53% ( 77.78% of   1.81%)  66.32% ( 79.19% of  34.88%)   0.00% 
+           nInst     BJ    Load   Store      INT      FP  : LD Forward , Replay : Worst Unit (clk)
+   0        5762  17.84%  16.45%  11.09%  49.86%   4.43%  :      6.96%     251 inst/repl  :  LDSTIssueX 0.47 
+   1        3204  15.48%  15.11%   9.83%  51.12%   7.90%  :      8.06%     200 inst/repl  :  ALUIssueX 0.38 
+Proc  IPC  Active       Cycles  Busy   LDQ   STQ  IWin   ROB  Regs Ports   TLB  maxBr MisBr Br4Clk  Other
+   0  0.04 100.00       146762   1.0   0.0   0.0   0.1   0.0   0.0   0.0   0.0   0.0   98.8    0.0    0.1 
+   1  0.06  34.24        50257   1.6   0.0   0.0   0.3   0.9   0.1   0.0   0.0   0.0   97.0    0.0    0.1 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  DL1 0.0   6.02% ( 3.3%, 2.7%) 64.01%  0.10GB/s :  L1L2 1058.57 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   1  DL1 0.0   6.68% ( 3.5%, 3.1%) 31.96%  0.06GB/s :  L1L2 1058.57 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  IL1 0.0  19.92% (19.9%, 0.0%) 71.93%  0.37GB/s :  L1L2 1058.57 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   1  IL1 0.0  16.50% (16.5%, 0.0%) 37.58%  0.16GB/s :  L1L2 1058.57 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s :
+
+8)# Bench : ./sesc.smp -c smp.conf splash/fft.mips -p1 -m4 -n1000 
+# File  : sesc_fft.mips.UJEw4P :       Wed May 16 15:00:55 2018
+      Exe Speed        Exe MHz         Exe Time         Sim Time (5000MHz)
+    371.200 KIPS      7.4904 MHz       0.020 secs       0.030 msec
+Proc  Avg.Time BPType       Total          RAS           BPred          BTB            BTAC
+   0   268.698  hybrid       61.13% ( 76.56% of   5.26%)  60.28% ( 73.06% of  33.85%)   0.00% 
+           nInst     BJ    Load   Store      INT      FP  : LD Forward , Replay : Worst Unit (clk)
+   0        7424  16.39%  15.88%  10.96%  49.69%   6.83%  :     10.86%     146 inst/repl  :  LDSTIssueX 0.42 
+Proc  IPC        Cycles  Busy   LDQ   STQ  IWin   ROB  Regs Ports   TLB  maxBr MisBr Br4Clk  Other
+   0  0.05       149808   1.2   0.0   0.0   0.2   0.6   0.3   0.0   0.0   0.0   97.5    0.0    0.1 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  DL1 0.0   5.13% ( 2.7%, 2.4%) 93.88%  0.10GB/s :  L1L2 1228.23 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  IL1 0.0  15.84% (15.8%, 0.0%) 108.27%  0.37GB/s :  L1L2 1228.23 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+
+9)# Bench : ./sesc.smp -c smp.conf splash/fft.mips -p4 -m4 -n1000 
+# File  : sesc_fft.mips.M3o68t :       Wed May 16 15:10:21 2018
+      Exe Speed        Exe MHz         Exe Time         Sim Time (5000MHz)
+    323.475 KIPS      3.6083 MHz       0.040 secs       0.029 msec
+Proc  Avg.Time BPType       Total          RAS           BPred          BTB            BTAC
+   0   270.762  hybrid       53.27% ( 72.88% of   5.85%)  52.05% ( 62.90% of  30.75%)   0.00% 
+   1   252.965  hybrid       69.30% ( 71.43% of   1.49%)  69.26% ( 77.85% of  33.69%)   0.00% 
+   2   252.909  hybrid       68.44% ( 71.43% of   1.43%)  68.40% ( 78.40% of  33.20%)   0.00% 
+   3   241.142  hybrid       57.59% ( 71.43% of   1.83%)  57.33% ( 68.47% of  29.06%)   0.00% 
+           nInst     BJ    Load   Store      INT      FP  : LD Forward , Replay : Worst Unit (clk)
+   0        5287  19.07%  16.76%  10.46%  50.92%   2.44%  :      2.48%     587 inst/repl  :  LDSTIssueX 0.44 
+   1        2707  17.33%  15.48%   8.68%  53.16%   4.69%  :      2.39%     677 inst/repl  :  ALUIssueX 0.31 
+   2        2662  18.33%  14.95%   8.34%  52.89%   4.77%  :      2.51%     666 inst/repl  :  LDSTIssueX 0.33 
+   3        2283  16.73%  15.02%   9.86%  51.95%   5.56%  :      2.92%     571 inst/repl  :  LDSTIssueX 0.34 
+Proc  IPC  Active       Cycles  Busy   LDQ   STQ  IWin   ROB  Regs Ports   TLB  maxBr MisBr Br4Clk  Other
+   0  0.04 100.00       144330   0.9   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   99.0    0.0    0.1 
+   1  0.06  33.04        47692   1.4   0.0   0.0   0.1   0.0   0.1   0.0   0.0   0.0   98.3    0.0    0.1 
+   2  0.06  32.63        47096   1.4   0.0   0.0   0.1   0.0   0.0   0.0   0.0   0.0   98.4    0.0    0.1 
+   3  0.05  32.60        47050   1.2   0.0   0.0   0.1   0.0   0.0   0.0   0.0   0.0   98.6    0.0    0.1 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  DL1 0.0   6.77% ( 4.0%, 2.7%) 43.24%  0.11GB/s :  L1L2 999.917 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   1  DL1 0.0   8.19% ( 4.9%, 3.2%) 19.71%  0.06GB/s :  L1L2 999.917 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   2  DL1 0.0   8.32% ( 5.4%, 2.9%) 18.68%  0.06GB/s :  L1L2 999.917 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   3  DL1 0.0   9.09% ( 5.2%, 3.9%) 17.09%  0.06GB/s :  L1L2 999.917 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  IL1 0.0  21.70% (21.7%, 0.0%) 48.02%  0.38GB/s :  L1L2 999.917 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   1  IL1 0.0  18.54% (18.5%, 0.0%) 23.00%  0.16GB/s :  L1L2 999.917 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   2  IL1 0.0  17.62% (17.6%, 0.0%) 22.82%  0.15GB/s :  L1L2 999.917 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   3  IL1 0.0  19.54% (19.5%, 0.0%) 19.80%  0.14GB/s :  L1L2 999.917 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+
+10)# Bench : ./sesc.smp -c smp.conf splash/fft.mips -p2 -m4 -l8 
+# File  : sesc_fft.mips.wwHqSn :       Wed May 16 15:12:22 2018
+      Exe Speed        Exe MHz         Exe Time         Sim Time (5000MHz)
+    297.133 KIPS      4.9009 MHz       0.030 secs       0.029 msec
+Proc  Avg.Time BPType       Total          RAS           BPred          BTB            BTAC
+   0   282.371  hybrid       54.54% ( 75.00% of   5.92%)  53.25% ( 65.69% of  33.63%)   0.00% 
+   1   231.127  hybrid       66.53% ( 77.78% of   1.81%)  66.32% ( 79.19% of  34.88%)   0.00% 
+           nInst     BJ    Load   Store      INT      FP  : LD Forward , Replay : Worst Unit (clk)
+   0        5710  17.76%  16.53%  11.17%  49.74%   4.47%  :      6.89%     260 inst/repl  :  LDSTIssueX 0.49 
+   1        3204  15.48%  15.11%   9.83%  51.12%   7.90%  :      8.06%     200 inst/repl  :  ALUIssueX 0.38 
+Proc  IPC  Active       Cycles  Busy   LDQ   STQ  IWin   ROB  Regs Ports   TLB  maxBr MisBr Br4Clk  Other
+   0  0.04 100.00       147024   1.0   0.0   0.0   0.1   0.0   0.0   0.0   0.0   0.0   98.8    0.0    0.1 
+   1  0.06  34.18        50257   1.6   0.0   0.0   0.3   0.9   0.1   0.0   0.0   0.0   97.0    0.0    0.1 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  DL1 0.0   6.04% ( 3.3%, 2.8%) 63.98%  0.10GB/s :  L1L2 1056.68 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   1  DL1 0.0   6.68% ( 3.5%, 3.1%) 32.03%  0.06GB/s :  L1L2 1056.68 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  IL1 0.0  20.15% (20.2%, 0.0%) 71.45%  0.37GB/s :  L1L2 1056.68 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   1  IL1 0.0  16.50% (16.5%, 0.0%) 37.66%  0.16GB/s :  L1L2 1056.68 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+
+11)# Bench : ./sesc.smp -c smp.conf splash/fft.mips -p1 -m4 -l8 
+# File  : sesc_fft.mips.suCOjx :       Wed May 16 15:13:58 2018
+      Exe Speed        Exe MHz         Exe Time         Sim Time (5000MHz)
+    368.600 KIPS      7.5035 MHz       0.020 secs       0.030 msec
+Proc  Avg.Time BPType       Total          RAS           BPred          BTB            BTAC
+   0   275.695  hybrid       61.60% ( 76.56% of   5.32%)  60.76% ( 73.08% of  34.58%)   0.00% 
+           nInst     BJ    Load   Store      INT      FP  : LD Forward , Replay : Worst Unit (clk)
+   0        7372  16.32%  15.94%  11.03%  49.59%   6.88%  :     10.81%     147 inst/repl  :  LDSTIssueX 0.43 
+Proc  IPC        Cycles  Busy   LDQ   STQ  IWin   ROB  Regs Ports   TLB  maxBr MisBr Br4Clk  Other
+   0  0.05       150070   1.2   0.0   0.0   0.2   0.6   0.3   0.0   0.0   0.0   97.5    0.0    0.1 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  DL1 0.0   5.14% ( 2.7%, 2.4%) 93.92%  0.10GB/s :  L1L2 1226.09 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  IL1 0.0  16.00% (16.0%, 0.0%) 107.79%  0.37GB/s :  L1L2 1226.09 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+
+12)# Bench : ./sesc.smp -c smp.conf splash/fft.mips -p4 -m4 -l8 
+# File  : sesc_fft.mips.Y6hfwV :       Wed May 16 15:14:25 2018
+      Exe Speed        Exe MHz         Exe Time         Sim Time (5000MHz)
+    322.175 KIPS      3.6149 MHz       0.040 secs       0.029 msec
+Proc  Avg.Time BPType       Total          RAS           BPred          BTB            BTAC
+   0   277.839  hybrid       53.72% ( 72.88% of   5.94%)  52.51% ( 63.06% of  31.59%)   0.00% 
+   1   252.965  hybrid       69.30% ( 71.43% of   1.49%)  69.26% ( 77.85% of  33.69%)   0.00% 
+   2   252.909  hybrid       68.44% ( 71.43% of   1.43%)  68.40% ( 78.40% of  33.20%)   0.00% 
+   3   241.142  hybrid       57.59% ( 71.43% of   1.83%)  57.33% ( 68.47% of  29.06%)   0.00% 
+           nInst     BJ    Load   Store      INT      FP  : LD Forward , Replay : Worst Unit (clk)
+   0        5235  18.99%  16.85%  10.54%  50.79%   2.46%  :      2.38%     654 inst/repl  :  LDSTIssueX 0.46 
+   1        2707  17.33%  15.48%   8.68%  53.16%   4.69%  :      2.39%     677 inst/repl  :  ALUIssueX 0.31 
+   2        2662  18.33%  14.95%   8.34%  52.89%   4.77%  :      2.51%     666 inst/repl  :  LDSTIssueX 0.33 
+   3        2283  16.73%  15.02%   9.86%  51.95%   5.56%  :      2.92%     571 inst/repl  :  LDSTIssueX 0.34 
+Proc  IPC  Active       Cycles  Busy   LDQ   STQ  IWin   ROB  Regs Ports   TLB  maxBr MisBr Br4Clk  Other
+   0  0.04 100.00       144592   0.9   0.0   0.0   0.0   0.0   0.0   0.0   0.0   0.0   99.0    0.0    0.1 
+   1  0.06  32.98        47692   1.4   0.0   0.0   0.1   0.0   0.1   0.0   0.0   0.0   98.3    0.0    0.1 
+   2  0.06  32.57        47096   1.4   0.0   0.0   0.1   0.0   0.0   0.0   0.0   0.0   98.4    0.0    0.1 
+   3  0.05  32.54        47050   1.2   0.0   0.0   0.1   0.0   0.0   0.0   0.0   0.0   98.6    0.0    0.1 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  DL1 0.0   6.78% ( 4.0%, 2.8%) 43.18%  0.11GB/s :  L1L2 998.105 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   1  DL1 0.0   8.19% ( 4.9%, 3.2%) 19.74%  0.06GB/s :  L1L2 998.105 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   2  DL1 0.0   8.32% ( 5.4%, 2.9%) 18.71%  0.06GB/s :  L1L2 998.105 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   3  DL1 0.0   9.09% ( 5.2%, 3.9%) 17.12%  0.06GB/s :  L1L2 998.105 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+################################################################################
+Proc  Cache Occ MissRate (RD, WR) %DMemAcc MB/s : ... 
+   0  IL1 0.0  21.97% (22.0%, 0.0%) 47.64%  0.38GB/s :  L1L2 998.105 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   1  IL1 0.0  18.54% (18.5%, 0.0%) 23.04%  0.15GB/s :  L1L2 998.105 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   2  IL1 0.0  17.62% (17.6%, 0.0%) 22.86%  0.15GB/s :  L1L2 998.105 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+   3  IL1 0.0  19.54% (19.5%, 0.0%) 19.84%  0.14GB/s :  L1L2 998.105 MB/s :  SysBus 0 MB/s :  MemoryBus 0 MB/s : 
+

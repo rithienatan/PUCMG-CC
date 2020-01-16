@@ -1,0 +1,121 @@
+1. Incluir uma nova coluna
+	1.1 Create table AlterTeste
+	    (CodTes int not null,
+	     NomTes char(20) not null);
+	1.2 Insert into AlterTeste
+	    values(1, 'Primeiro');
+	    Insert into AlterTeste
+	    values(2, 'Segundo');
+	    Insert into AlterTeste
+	    values(3, 'Terceiro');
+	    commit;
+	    select * from AlterTeste;
+	1.3 Desc AlterTeste;
+	1.4 Alter table AlterTeste
+	    add QteTes int;
+	1.5 Desc AlterTeste;
+	1.6 Update AlterTeste
+	    set QteTes = 1
+	    where CodTes = 3;
+		.
+		.
+		.
+	1.7 Select * from AlterTeste;
+	    commit;
+	1.8 Alterando característica
+	    Alter table AlterTeste
+	    modify QteTes not null;
+	    Desc AlterTeste;
+
+2. Para aumentar o tamanho de uma coluna
+	2.1 Desc AlterTeste;
+	    Alter table AlterTeste
+	    modify NomTes char(30);
+	    Desc AlterTeste;
+	2.2 Diminuindo o tamanho da coluna
+	    Create table Aux
+	    (CodTes int not null,
+	     NoeTes char(20) not null,
+	     QteTes int not null);
+	    Desc Aux;
+	2.3 Insert into Aux
+	    	(
+		Select CodTes,
+		   substr(NomTes, 1, 20),
+		   QteTes
+		   from AlterTeste);
+		Select * from Aux;
+		Select substr(NomAut, 2, 5)
+		   from Autor;
+	2.4 Drop table AlterTeste;
+	    Desc AlterTeste;(error: tabela excluída)
+	2.5 Rename Aux
+	    to AlterTeste;
+	    Desc AlterTeste;
+
+3. Incluindo uma Primary Key(PK)
+	Alter table AlterTeste
+	add constraint PK_Teste
+	primary Key(CodTes);
+
+4. Incluindo uma Foreign Key(FK)
+	Alter table AlterTeste
+	add constraint FK_Teste_Pais
+	foreign Key(CodTes)
+	references Pais;
+
+5. Renomeando 
+	Desc AlterTeste;
+
+----------------------------------//--------------------------------------------
+Autorização
+Grant select, update, delete, references
+	on Autor to user;
+	Select * from ArthurParadizi.Autor;
+	-----------------------------------
+	Create Pais
+	   Select * from _________.Pais;
+---------------------------------//---------------------------------------------
+Listar NomAutor, NomPais
+
+a. Cross Join
+   select A.NomeAutor, P.NomePais
+	from Autor A,
+	     Pais P
+	where A.CodPais = P.codPais
+	Order by A.NomeAutor;
+
+b. Inner Join
+   select Autor.NomeAutor, Pais.NomePais
+	from Autor inner join Pais
+	on Pais.NomePais = 'Brasil'
+	and Autor.CodPais = Pais.CodPais
+	Order by Autor.NomeAutor;
+
+c. Natural Join
+   select NomeAutor, NomePais
+	from Pais natural join
+	     Autor
+   Order by NomeAutor;
+
+//Error.
+   select CodTes, NomeAutor
+   from AlterTeste natural
+naturaljoin Autor;
+
+d. Outer join
+	Select Pais.NomePais, Autor.NomeAutor
+	   from Pais left join
+		Autor on Pais.CodPais =
+		Autor.CodPais
+	 Order by Pais.NomePais,
+		  Autor.NomeAutor;
+
+e. select NomePais
+	from Pais
+	where Exists
+		(select * 
+		   from Autor
+		   where CodPais = 
+		   Pais.CodPais);
+	

@@ -1,0 +1,6 @@
+Qunatidade: 5
+Termo par: 2 --> 1
+Termo par: 4 --> 3
+Termo par: 6 --> 8
+Termo par: 8 --> 21
+Termo par: 10 --> 55

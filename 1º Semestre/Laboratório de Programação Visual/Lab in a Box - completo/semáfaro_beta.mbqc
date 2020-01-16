@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mbqc xmlns="http://mbqc.namespaces.minibloq.org" xmlns:minibloq="http://minibloq.org" MinibloqVersion="0.82.Beta">
+    <files/>
+    <properties>
+        <canvas visible="true"/>
+        <blocks count="34"/>
+    </properties>
+    <variables/>
+    <blocks>
+        <ComponentStart function="Flow" commented="false" instanceName="initBoard" paramsCount="0" hasAddParamsButton="false" loadAction="noLoad"/>
+        <Comment function="Code" commented="false" constantValue="Este é o código do Lab in a box de um Semáfaro inteligente!!" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <Comment function="Code" commented="false" constantValue="Foi colocado uma estrutura de repetição para fazer o semáfaro funcionar continuamente." paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <Comment function="Code" commented="false" constantValue="Legenda: s --&gt; segundos" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <while function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantTrue function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </while>
+        <IOPin function="Setter" commented="false" instanceName="D13_LED" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantTrue function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <IOPin function="Setter" commented="false" instanceName="D6" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantTrue function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <IOPin function="Setter" commented="false" instanceName="D5" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantTrue function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <Comment function="Code" commented="false" constantValue="Em um instante de 5s (50s na vida real) fica acesso as luz verde do semáfaro de carro e duas luzes vermelhas de acessas do semafáro do pedestre também." paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <delay function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="5000" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </delay>
+        <IOPin function="Setter" commented="false" instanceName="D13_LED" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantFalse function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <IOPin function="Setter" commented="false" instanceName="D12" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantTrue function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <IOPin function="Setter" commented="false" instanceName="D6" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantFalse function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <Comment function="Code" commented="false" constantValue="Agora acende o semáfaro amarelo por 1s (+ou- 5s na vida real) e desliga uma lede vermelha do semáfaro do pedestre" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <delay function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="1000" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </delay>
+        <IOPin function="Setter" commented="false" instanceName="D12" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantFalse function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <IOPin function="Setter" commented="false" instanceName="D5" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantFalse function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <IOPin function="Setter" commented="false" instanceName="D11" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantTrue function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <IOPin function="Setter" commented="false" instanceName="D8" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantTrue function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <IOPin function="Setter" commented="false" instanceName="D9" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantTrue function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <Comment function="Code" commented="false" constantValue="Agora fica acesso por 6s (40s na vida real) o vermelho do semáfaro de carro e o verde de pedestre apaga a cada 2s" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <delay function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="2000" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </delay>
+        <IOPin function="Setter" commented="false" instanceName="D9" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantFalse function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <delay function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="2000" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </delay>
+        <IOPin function="Setter" commented="false" instanceName="D8" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantFalse function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <IOPin function="Setter" commented="false" instanceName="D7" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantTrue function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <Comment function="Code" commented="false" constantValue="O semáfaro amarelo de pedestre fica acesso por 2s(+ou- 10s na vida real)" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <delay function="Flow" commented="false" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <numberConstant function="Constant" commented="false" constantValue="2000" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </delay>
+        <IOPin function="Setter" commented="false" instanceName="D11" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantFalse function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <IOPin function="Setter" commented="false" instanceName="D7" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantFalse function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <IOPin function="Setter" commented="false" instanceName="D6" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantTrue function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <IOPin function="Setter" commented="false" instanceName="D5" paramsCount="1" hasAddParamsButton="false" loadAction="load">
+            <boolConstantTrue function="Constant" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        </IOPin>
+        <Comment function="Code" commented="false" constantValue="reinicia o loop novamente" paramsCount="0" hasAddParamsButton="false" loadAction="load"/>
+        <whileEnd function="Flow" commented="false" paramsCount="0" hasAddParamsButton="false" loadAction="brother"/>
+    </blocks>
+</mbqc>

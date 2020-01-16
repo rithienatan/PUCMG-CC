@@ -1,0 +1,23 @@
+
+15 mil cientistas - aproximadamente em todo o mundo
+38 petaFLOPS - poder de processamento do cérebro - aproximadamente para apenas um ser humano
+3,3 exaFLOPS - computador com maior poder de processamento do mundo
+
+Quant total de computadores: 38 petaFLOPS x 15mil = 570 exaFLOPS - aproximadamente
+
+Baseada na quantidade total da comunidade cientifica estimada pelo estudante Aaron Dunbrack, estudante da Universade de Massachusetts, temos um total de 15 mil cientistas. Também, em um número aproximado, sabemos que a capacidade de processamento de uma mente humana é de 38 petaFLOPS segundo Dharmendra Modha, líder do projeto de pesquisa SyNAPSE(projeto de autoria da IBM). Outro dado que compõe o nosso calculo é o maior poder de processamento registrado por um computador que chega a ser aproximadamente 3,3 exaFLOPS(computador Summit projetado pela IBM).
+
+Com estes dados, a formula para calcular a capacidade de processamento aproximado de UM supercomputador para substituir todas as mentes dos cientistas existentes no mundo é: quantidade de processamento de um cérebro x quantidade total de cientistas.
+
+38 petaFLOPS x 15mil = aproximadamente 570 exaFLOPS
+
+Dividindo 570 exaFLOPS por 3,3 exaFLOPS(referente ao supercomputador atual), precisaríamos de aproximadamente 173 supercomputadores atualmente para substituir a comunidade cientifica no mundo.
+
+--------------------------------------//-------------------------------------------------
+Links relacionados:
+
+Este link é referente a discussão inicial sobre o assunto: https://www.quora.com/Roughly-what-processing-power-does-the-human-brain-equate-to-In-terms-of-petaflops-or-gigahertz-not-words-it-can-process
+
+Este link é referente a capacidade de processamento referente a um supercomputador atual: https://en.wikipedia.org/wiki/TOP500
+
+Este link é referente ao tamanho total da comunidade cientifica no mundo: https://www.quora.com/How-many-scientists-exist-worldwide

@@ -1,0 +1,3 @@
+Cadeia: 5
+5
+Quantidade de digitos: 1

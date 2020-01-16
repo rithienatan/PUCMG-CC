@@ -1,0 +1,40 @@
+Otimização de Queries
+
+1. Só otimiza quem conhece a base de dados
+
+2. Regra maior:
+	a. Se o + rápido possível
+	b. projetar apenas o necessário
+Agência{CodAge, NomAge, CodLoc}//300
+Cliente{CodCliu,NomeCli}/*10000/Agência*/
+Conta{NumCta,CodAge,SclAu/CodCli'}/*10000/Agência*/
+Localidade{CodLoc, NomLoc}//90
+Movimento{NumCta,DatMov,PosNeg,ValMov,SalCta}
+
+Query: SelecionarClientes com 'Maria no nome' e saldo em algum dia dor ultimos
+3 meses maior que 5000 em agencias de Belo Horizonte
+
+Select distinct CodCli, nOMcLI
+	from Monmento join Conta
+	on Monmento.NumCta = Conta.NumCta
+	join Agencia ou Agencia.CodAge
+	= conta.CodAge join Localidade
+	ou Agencia.CodLoc = Localidade.CodLoc 
+	join Cliente ou conta.CodCli = Cliente.CodCli
+	where DatMov >= Spdate - 90
+	and SalCta > 5000
+	and nomLoc = 'Belo Horizonte'
+	and nomCli lite '%Maria%'
+	Order by nomCli;
+
+5. Query Otimizada
+
+	Select distinct CodCli, NomCli
+	from localidade join Agencia on
+	NomLoc = 'BH' and localidade.CodLoc =
+	Agência.CodAge = Conta.CodAge
+	join Cliente on NomCli lite
+	'%Maria%' and Conta.CodCli = Cliente.SalCta
+	> 5000 and DatMov >= Spdate - 90 and Conta.NumCta =
+	Movimento.NumCta
+	Order by NomCli;

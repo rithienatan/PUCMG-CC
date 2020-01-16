@@ -1,0 +1,25 @@
+Pergunta 1
+
+Em relação as políticas de escalonamento do OpenMP, podemos afirmar que:
+
+i. A política estática procura dividir o número de blocos de iterações (chunk) do laço de repetição igualmente entre as threads.
+ii. A política dinâmica é geralmente mais eficiente que a estática para aplicações desbalanceadas.
+iii. A diferença principal da política guiada para a estática é a diminuição do tamanho do bloco de iterações (chunk) ao longo da execução.
+iv. Na política dinâmica, quanto menor o tamanho do bloco de iterações (chunk), mais balanceada fica a aplicação.
+v. Na política dinâmica, quanto menor o tamanho do bloco de iterações (chunk), mais rápida fica a aplicação.
+
+R: apenas i, ii e iv são afirmativas corretas. 
+
+--------------------------------------------------//-----------------------------------
+
+Pergunta 2
+
+Em relação a resolução de condições de disputa em OpenMP, podemos afirmar que:
+
+i. A implementação de uma operação de redução usando a diretiva "omp critical" tem desempenho muito inferior a da diretiva "omp reduction".
+ii. Uma variável que nunca é modificada em iterações diferentes do laço de repetição deve ser declarada como privada.
+iii. A diretiva "omp critical" garante que um trecho de código é acessado por apenas uma thread de cada vez.
+iv. A diretiva "shared" cria uma cópia de uma variável compartilhada para cada thread.
+v. Quando uma variável é declarada como privada (private), é como se ela tivesse sido declarada dentro do laço de repetição, mas apenas uma vez para cada thread.
+
+R: apenas ii, iii e v são afirmativas corretas. 
