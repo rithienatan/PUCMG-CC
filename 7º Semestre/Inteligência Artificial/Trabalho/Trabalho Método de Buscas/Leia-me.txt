@@ -1,0 +1,15 @@
+
+
+===============================================
+
+1. Os algoritmos implementados no trabalho estão
+no arquivo Heuristica.cs. Apesar de estar presente
+utilizamos o algoritmo Guloso apenas para testes,
+visto que a heuristica dele não é admissível para
+o nosso trabalho;
+
+2. Segue link para o executável do jogo.
+
+https://drive.google.com/file/d/18HZ8kXR8XT5f8IFtzTnpsBEMa2AWYrbi/view?usp=sharing
+
+================================================
