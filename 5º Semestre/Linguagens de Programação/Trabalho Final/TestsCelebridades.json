@@ -1,0 +1,7 @@
+[
+    { "nome": "Celebridade1", "idade": 25, "role": "Cantora" },
+    { "nome": "Celebridade2", "idade": 26, "role": "Dançarina" },
+    { "nome": "Celebridade3", "idade": 27, "role": "Cientista" },
+    { "nome": "Celebridade4", "idade": 28, "role": "Engenheira" },
+    { "nome": "Celebridade5", "idade": 29, "role": "Instrumentista" }
+]
