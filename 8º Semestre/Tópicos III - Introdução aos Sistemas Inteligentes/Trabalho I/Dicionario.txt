@@ -1,0 +1,92 @@
+C6 - Sexo
+	1. Masculino 2. Feminino
+
+C8 - Idade
+	Numérico.
+
+I1 - tem algum plano de saúde (médico ou odontológico), particular, de empresa ou órgão público?
+	1. Sim 2. Não 
+
+P1 - O(A) sr(a) sabe seu peso? (mesmo que seja valor aproximado)
+	1. Sim 2. Não
+
+P2 - Quanto tempo faz que o(a) sr(a) se pesou da última vez?
+	1. Menos de 1 semana 
+	2. Entre 1 semana e menos de 1 mês 
+	3. Entre 1 mês a menos de 3 meses 
+	4. Entre 3 meses e menos de 6 meses 
+	5. Há 6 meses ou mais 
+	6. Nunca se pesou 
+
+P9 - Em quantos dias da semana, o(a) sr(a) costuma comer verdura ou legume cozido, como couve, cenoura, chuchu, berinjela, abobrinha? (sem contar batata, mandioca ou inhame)
+	Numero(inteiro) de dias.
+
+P16 - Em quantos dias da semana o(a) sr(a) costuma tomar suco de frutas natural?
+	Numero(inteiro) de dias.
+
+P18 - Em quantos dias da semana o(a) sr(a) costuma comer frutas?
+	Numero(inteiro) de dias.
+
+P20 - Em quantos dias da semana o(a) sr(a) costuma tomar refrigerante ou suco artificial?
+	Numero(inteiro) de dias.
+
+P25 - Em quantos dias da semana o(a) sr(a) come alimentos doces, tais como pedaços de bolo ou torta, doces, chocolates, balas, biscoitos ou bolachas doces?
+	Numero(inteiro) de dias.
+
+P26 - Em quantos dias da semana o(a) sr(a) substitui a refeição do almoço ou jantar por sanduiches, salgados ou pizzas?
+	Numero(inteiro) de dias.
+
+P27 - Com que frequência o(a) sr(a) costuma consumir alguma bebida alcoólica?
+	1. Não bebo nunca 
+	2. Menos de uma vez por mês 
+	3. Uma vez ou mais por mês 
+
+P28 - Quantos dias por semana o(a) sr(a) costuma tomar alguma bebida alcoólica?
+	Numero(inteiro) de dias por semana.
+
+P29 - Em geral, no dia que o(a) sr(a) bebe, quantas doses de bebida alcoólica o(a) sr(a) consome? (1 dose de bebida alcoólica equivale a 1 lata de cerveja, 1 taça de vinho ou 1 dose de cachaça, whisky ou qualquer outra bebida alcoólica destilada)
+	Numero de doses.	
+
+P31 - Quantos anos o(a) sr(a) tinha quando começou a consumir bebidas alcoólicas?
+	Numérico(inteiro), assim como idade.
+
+P34 - Nos últimos três meses, o(a) sr(a) praticou algum tipo de exercício físico ou esporte? (não considere fisioterapia)
+	1. Sim 2. Não
+
+P35 - Quantos dias por semana o(a) sr(a) costuma praticar exercício físico ou esporte?
+	Número de dias por semana.
+
+P37 - Em geral, no dia que o(a) sr(a), pratica exercício ou esporte, quanto tempo dura esta atividade?
+	P03701 são as horas.
+	P03702 são os minutos.
+
+P41 - Quanto tempo o(a) sr(a) gasta, por dia para percorrer este trajeto a pé ou de bicicleta, considerando a ida e a volta do trabalho?
+	P04101 são as horas.
+	P04102 são os minutos.
+
+P45 - Em média, quantas horas por dia o(a) sr(a) costuma ficar assistindo televisão?
+	1. Menos de 1 hora 
+	2. Entre 1 hora e menos de 2 horas 
+	3. Entre 2 horas e menos de 3 horas 
+	4. Entre 3 horas e menos de 4 horas 
+	5. Entre 4 horas e menos de 5 horas 
+	6. Entre 5 horas e menos de 6 horas 
+	7. 6 horas ou mais 
+	8. Não assiste televisão
+
+P46 - Perto do seu domicílio, existe algum lugar público (praça, parque, rua fechada, praia) para fazer caminhada, realizar exercício ou praticar esporte?
+	1. Sim 2. Não 
+
+P47 - O(A) sr(a) conhece algum programa público no seu município de estímulo à prática de atividade física?
+	1. Sim 2. Não 
+
+Q29 - Quando foi a última vez que o(a) sr(a) fez exame de sangue para medir a glicemia, isto é, o açúcar no sangue?
+	1. Há menos de 6 meses
+	2. Entre 6 meses e menos de 1 ano. 
+	3. Entre 1 ano e menos de 2 anos 
+	4. Entre 2 anos e menos de 3 anos 
+	5. 3 anos ou mais 
+	6. Nunca
+
+Q30 - Algum médico já lhe deu o diagnóstico de diabetes?
+	1. Sim 2. Não
