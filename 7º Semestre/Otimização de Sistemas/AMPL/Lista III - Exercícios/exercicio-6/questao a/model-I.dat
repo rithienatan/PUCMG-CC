@@ -1,0 +1,14 @@
+set PROCESSADOR := 3;
+set JOB := 10;
+
+param Tempo	:=
+		1	6
+		2	4
+		3	5
+		4	4
+		5	3
+		6	7
+		7	8
+		8	5
+		9	3
+		10	3;

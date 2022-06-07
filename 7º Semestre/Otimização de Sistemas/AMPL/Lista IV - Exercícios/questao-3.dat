@@ -1,0 +1,10 @@
+set AGENTES := A1 A2 A3 A4;
+
+set OBJETOS := OA OB OC OD;
+
+param Fluxo:
+OA OB OC OD :=
+A1 10 22 7 9
+A2 8 15 5 7
+A3 12 32 9 11
+A4 10 12 1 7;

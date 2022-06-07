@@ -1,0 +1,21 @@
+set Container := 5;
+set Item := 10;
+
+param Peso :=
+		1	9
+		2	6
+		3	5
+		4	20
+		5	4
+		6	1
+		7	3
+		8	6
+		9	7
+		10	8;
+		
+param Capacidade :=
+		1	10
+		2	15
+		3	9
+		4	8
+		5	12;	

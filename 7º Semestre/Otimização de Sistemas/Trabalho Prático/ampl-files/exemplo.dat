@@ -1,0 +1,18 @@
+param n := 6;
+param MaxTemp := 156;
+
+param HoraCurso :=
+	1	65
+	2	20
+	3	10
+	4	45
+	5	25
+	6	7;
+	
+param Necessidade :=
+	1	1
+	2	0
+	3	0
+	4	1
+	5	1
+	6	0;

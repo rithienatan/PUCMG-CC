@@ -1,0 +1,153 @@
+
+Diferencas no Fluxo de Dados entre ipfwadm, ipchains e iptables:
+================================================================
+
+Fluxo com IPFWADM e IPCHAINS (Kernel 2.0 e 2.2 respectivamente):
+================================================================
+
+INPUT:
+======
+          ________
+ INPUT   |        |   INPUT
+-------> |FIREWALL| <-------
+         |________|
+ dados  eth0    eth1  dados
+
+
+- Quaisquer pacotes de dados cujo sentido seja o Firewall eh considerado como INPUT nao importando de onde venham.
+- As regras de INPUT sao consideradas as mais importantes regras em um Firewall e que normalmente a configuramos
+  como sendo DENY por default. Pois sempre serah mais seguro negar tudo no filtro e apenas liberar as portas e IPs
+  que se deseja utilizar e nunca o inverso.
+
+
+FORWARD:
+========      
+
+          ________
+         |        |    
+         |FIREWALL|
+         |________|        
+        eth0    eth1         
+           ^     ^
+           |dados|
+           +-----+
+           FORWARD
+
+- Quaisquer passagens de pacotes entre interfaces no Firewall, eh considerado como sendo FORWARD, nao importando
+  o sentido do pacote e sim a mudanca de interface.
+- O curioso eh que nao existe regra para se restringir acesso entre interfaces no FORWARD. Ex.: nao posso criar
+  uma regra que negue determinado acesso vindo pela interface eth0 e que cujo destino seja a interface eth1. As 
+  minhas regras sao limitadas apenas a IPs, portas e protocolos em um FORWARD.
+- Veremos que isso irah mudar com o iptables.
+- Tambem costumamos defini-lo por default como sendo DENY.
+- Obs.: nao existem regras de FORWARD para maquinas que possuam apenas uma interface de rede conectadas ao
+  micro, mas pode passar a existir se nessa mesma maquina for utilizado um modem para acesso remoto a outra
+  rede. Ex.: eth0 - interface de rede  //  ppp0 - interface representada pelo modem. Nesse caso passo a ter duas
+  interfaces e com isso um possivel FORWARD. Podemos ateh admitir que na maquina onde haja roteamento entre redes
+  poderemos implementar regras de FOWARD.
+
+
+OUTPUT:
+=======
+          ________
+  OUTPUT |        |  OUTPUT
+<------- |FIREWALL| ------->
+  dados  |________|  dados
+        eth0    eth1        
+ 
+- O mesmo acontece com qualquer saida de pacote de dados do Firewall, todas as saidas sao consideradas OUTPUT.
+- As regras de OUTPUT nem sempre sao utilizadas pois sao as ultimas regras do filtro pelos quais os pacotes de 
+  dados passam antes de irem para a rede. Nesse momento alguns administradores admitem terem filtrado ao maximo
+  os dados que passaram pelas regras de INPUT e FORWARD do Firewall.
+
+
+Fluxo com IPTABLES (Kernel 2.4):
+================================
+
+                               FORWARD    
+     NAT                        dados                     NAT
+ (PREROUTING ) <------------------------------------> (PREROUTING )
+ (POSTROUTING)    ^ |         ________         | ^    (POSTROUTING)
+                  | | INPUT  |        |  INPUT | |
+            dados | +------> |FIREWALL| <------+ | dados
+                  +--------- |________| ---------+
+                      OUTPUT             OUTPUT
+
+
+- Como podemos observar, temos algumas fases que nao existiam no IPFWADM e IPCHAINS e as que existiam tiveram o
+seu fluxo de dados alterado. Vamos entao analisa-los:
+
+- Para os administradores que sonhavam com NAT(Network Address Translation) agora podem implementa-lo com o IPTABLES
+  no kernel 2.4. Vamos a alguns exemplos:
+
+
+          _______               ________
+         |       |             |        |
+         |       |             |        |
+         | HTTP  |             |Firewall|           _________
+         | Server|             |        |          | ROUTER  |  <========> INTERNET
+         |       |-------------|        |----------|_________|
+         |_______|             |________|          200.222.5.254
+        192.168.0.2     192.168.0.1  200.222.5.1
+                                     200.222.5.2
+
+Firewall: 
+=========
+eth1   = 192.168.0.1
+eth0   = 200.222.5.1
+eth0:0 = 200.222.5.2
+
+NAT = 192.168.0.2 <==> 200.222.5.2
+
+- Com o NAT podemos trocar o IP nao publico(192.168.0.2) pelo IP publico(200.222.5.2) e vice-versa. Todo pacote
+  que vir pela INTERNET para acessar o servidor 200.222.5.2, passa pela regra PREROUTING do Firewall e logo em
+  seguida eh feito um DNAT(destination NAT) que troca o IP destino 200.222.5.2 por 192.168.0.2 e em seguida o 
+  pacote eh encaminhado para o filtro, verificado nas regras de FORWARD e ai entao chega ao servidor destino.
+  Quando sair um pacote do IP 192.168.0.2 com destino a INTERNET, o mesmo passa novamente pelas regras de 
+  FORWARD e logo em seguida passa para o POSTROUTING que faz o SNAT(source NAT) onde eh trocado o IP 192.168.0.2
+  pelo IP 200.222.5.2 e ai sim vai para a INTERNET. O nome dado a esse tipo de acesso eh NAT 1:1. 
+
+- Como puderam perceber os pacotes tanto de entrada quanto de saida nao passaram pelas regras de INPUT e OUTPUT,
+  porque essas regras soh dizem respeito a pocotes direcionados ao Firewall.
+- Qualquer pacote cujo destino seja o Firewall entao o mesmo passa pelas regras de INPUT do Firewall e todo pacote
+  que sair do Firewall passa pelas regras de OUTPUT do mesmo.
+- Dessa forma temos como proteger mais ainda o Firewall pois podemos usar DENY para qualquer regra INPUT pois isso
+  nao afetaria o acesso ao servidor HTTP mostrado acima.
+
+- Para fazer o NAT acima bastariam 2 regras:
+  
+  iptables -A PREROUTING  -t nat -d 200.222.5.2/32 -j DNAT --to 192.168.0.2
+  iptables -A POSTROUTING -t nat -s 192.168.0.2/32 -j SNAT --to 200.222.5.2
+
+Obs.: Nao esquecam de criar o alias eth0:0 no Firewall com o IP 200.222.5.2 senao, nao irah funcionar. :)  
+
+- Alem disso o novo filtro traz o tao esperado STATEFUL PACKET utilizado por programas como o Firewall-1.
+  Com esse recurso o filtro consegue gerenciar, por exemplo, as conexoes feitas pelas estacoes e assim nao
+  deixar aberturas para scanners atuarem como acontecia com o tao conhecido protocolo FTP e outros.
+  Exemplo:
+
+  Antigamente se fazia uma regra assim no Firewall para permitir que estacoes pudecem acessar paginas na INTERNET:
+
+  ipchains -A input -p tcp -s 0/0 80 -d 0/0 1024: ! -y -j ACCEPT
+  
+  Ou seja isto diz ao Firewall para aceitar qualquer pacote cuja porta origem seja a 80/tcp que nao seja do
+  tipo SYN e isso pode ser muito bem utilizado por scanners que utilizam pacotes ACK para checarem servicos
+  ativos.
+
+  Com o novo filtro ficaria assim:
+
+  iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+  Dessa forma o Firewall soh aceita conexoes estabelecidas pelas estacoes e nao precisamos deixar em aberto
+  acessos vindos da porta 80/tcp, pois o Firewall recusaria.
+  Dessa forma os scanners foram anulados e podemos respirar novamente com nossos servidores. :)
+  Podemos tambem trabalhar com o FTP em modo ativo, pois para cada conexao 21/tcp o Firewall espera uma outra
+  conexao 20/tcp de retorno, o filtro vai gerenciar isso.
+
+  Existem outras features no iptables mas essas eu achei as mais importantes e por isso estou comentando-as aqui.
+  Desculpem qualquer erro, correcoes e sugestoes serao muito bem vidas e servirao para enriquecer.
+  O objetivo foi citar algumas diferencas entre esses filtros e nao ensinar a usa-los.
+
+  Marcelo Gondim
+  
+

@@ -1,0 +1,9 @@
+reset;
+
+model exercicioIII.mod;
+
+data testeI.dat;
+
+solve;
+
+display x, y, F;

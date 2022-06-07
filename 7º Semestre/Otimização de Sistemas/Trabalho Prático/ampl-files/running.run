@@ -1,0 +1,13 @@
+reset;
+
+model modelagem.mod;
+
+data exemplo.dat;
+
+expand z, Constraint;
+
+option solver cplex;
+
+solve;
+
+display Conclusao, z;

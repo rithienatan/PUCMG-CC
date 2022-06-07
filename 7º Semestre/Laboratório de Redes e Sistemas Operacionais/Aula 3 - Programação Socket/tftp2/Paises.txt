@@ -1,0 +1,234 @@
+013Afeganistão                                
+756África do Sul                              
+017Albânia, República da                      
+023Alemanha                                   
+037Andorra                                    
+040Angola                                     
+041Anguilla                                   
+043Antigua E Barbuda                          
+047Antilhas Holandesas                        
+053Arábia Saudita                             
+059Argélia                                    
+063Argentina                                  
+064Armênia, República da                      
+065Aruba                                      
+069Austrália                                  
+072Áustria                                    
+073Azerbaijão, República do                   
+077Bahamas, Ilhas                             
+080Bahrein, Ilhas                             
+081Bangladesh                                 
+083Barbados                                   
+085Belarus, República da                      
+087Bélgica                                    
+088Belize                                     
+229Benin                                      
+090Bermudas                                   
+097Bolívia                                    
+098Bosnia-Herzegovina (República da)          
+101Botsuana                                   
+108Brunei                                     
+111Bulgária, República da                     
+031Burkina Faso                               
+115Burundi                                    
+119Butão                                      
+127Cabo Verde, República de                   
+145Camarões                                   
+141Camboja                                    
+149Canadá                                     
+151Canárias, Ilhas                            
+154Catar                                      
+137Cayman, Ilhas                              
+153Cazaquistao, República do                  
+788Chade                                      
+158Chile                                      
+160China, República Popular                   
+163Chipre                                     
+511Christmas,Ilhas (Navidad)                  
+741Cingapura                                  
+165Cocos-Keeling, Ilhas                       
+169Colômbia                                   
+173Comores, Ilhas                             
+177Congo                                      
+888Congo, República Democrática do            
+183Cook, Ilhas                                
+187Coréia, Rep.Pop.Democrática                
+190Coréia, República da                       
+193Costa do Marfim                            
+196Costa Rica                                 
+198Coveite                                    
+195Croácia, República da                      
+199Cuba                                       
+232Dinamarca                                  
+783Djibuti                                    
+235Dominica, Ilha                             
+240Egito                                      
+687El Salvador                                
+244Emirados Árabes Unidos                     
+239Equador                                    
+247Eslovaca, República                        
+246Eslovênia, República da                    
+245Espanha                                    
+249Estados Unidos                             
+251Estônia, República da                      
+253Etiópia                                    
+255Falkland (Ilhas Malvinas)                  
+259Feroe, Ilhas                               
+870Fiji                                       
+267Filipinas                                  
+271Finlândia                                  
+161Formosa (Taiwan)                           
+275França                                     
+281Gabão                                      
+285Gambia                                     
+289Gana                                       
+291Georgia, República da                      
+293Gibraltar                                  
+297Granada                                    
+301Grécia                                     
+305Groelândia                                 
+309Guadalupe                                  
+313Guam                                       
+317Guatemala                                  
+337Guiana                                     
+325Guiana Francesa                            
+329Guiné                                      
+334Guiné-Bissau                               
+331Guiné-Equatorial                           
+341Haiti                                      
+345Honduras                                   
+351Hong Kong                                  
+355Hungria, República da                      
+357Iemen                                      
+361Índia                                      
+365Indonésia                                  
+372Irã, República Islâmica do                 
+369Iraque                                     
+375Irlanda                                    
+379Islândia                                   
+383Israel                                     
+386Itália                                     
+391Jamaica                                    
+399Japão                                      
+396Johnston, Ilhas                            
+403Jordânia                                   
+411Kiribati                                   
+420Laos, Rep.Pop.Democr.do                    
+423Lebuan, Ilhas                              
+426Lesoto                                     
+427Letônia, República da                      
+431Líbano                                     
+434Libéria                                    
+438Líbia                                      
+440Liechtenstein                              
+442Lituânia, República da                     
+445Luxemburgo                                 
+447Macau                                      
+449Macedônia, Ant.Rep.Iugoslava               
+450Madagascar                                 
+455Malásia                                    
+458Malavi                                     
+461Maldivas                                   
+464Mali                                       
+467Malta                                      
+472Marianas do Norte                          
+474Marrocos                                   
+476Marshall, Ilhas                            
+477Martinica                                  
+485Maurício                                   
+488Mauritânia                                 
+493México                                     
+093Mianmar (Birmânia)                         
+499Micronésia                                 
+490Midway, Ilhas                              
+505Moçambique                                 
+494Moldavia, República da                     
+495Mônaco                                     
+497Mongólia                                   
+501Montserrat, Ilhas                          
+507Namíbia                                    
+508Nauru                                      
+517Nepal                                      
+521Nicarágua                                  
+525Niger                                      
+528Nigéria                                    
+531Niue, Ilha                                 
+535Norfolk, Ilha                              
+538Noruega                                    
+542Nova Caledônia                             
+548Nova Zelândia                              
+556Omã                                        
+566Pacífico, Ilhas do                         
+573Países Baixos (Holanda)                    
+575Palau                                      
+580Panamá                                     
+545Papua Nova Guiné                           
+576Paquistão                                  
+586Paraguai                                   
+589Peru                                       
+593Pitcairn, Ilha De                          
+599Polinésia Francesa                         
+603Polônia, República da                      
+611Porto Rico                                 
+607Portugal                                   
+623Quênia                                     
+625Quirguiz, República da                     
+628Reino Unido                                
+640República Centro-Africana                  
+647República Dominicana                       
+660Reunião, Ilha                              
+670Romênia                                    
+675Ruanda                                     
+676Rússia, Federação da                       
+685Saara Ocidental                            
+677Salomão, Ilhas                             
+690Samoa                                      
+691Samoa Americana                            
+697San Marino                                 
+710Santa Helena                               
+715Santa Lúcia                                
+695São Cristovão e Neves, Ilhas               
+700São Pedro e Miquelon                       
+720São Tomé e Príncipe, Ilhas                 
+705São Vicente e Granadinas                   
+728Senegal                                    
+735Serra Leoa                                 
+388Sérvia e Montenegro                        
+731Seychelles                                 
+744Síria, República Árabe da                  
+748Somália                                    
+750Sri Lanka                                  
+754Suazilândia                                
+759Sudão                                      
+764Suécia                                     
+767Suíça                                      
+770Suriname                                   
+772Tadjiquistão, República do                 
+776Tailândia                                  
+780Tanzania, Rep. Unida da                    
+791Tcheca, República                          
+782Território Britânico no Oceano Índico      
+795Timor Leste                                
+800Togo                                       
+810Tonga                                      
+805Toquelau, Ilhas                            
+815Trinidad e Tobago                          
+820Tunísia                                    
+823Turcas e Caicos, Ilhas                     
+824Turcomenistão, República do                
+827Turquia                                    
+828Tuvalu                                     
+831Ucrânia                                    
+833Uganda                                     
+845Uruguai                                    
+847Uzbequistão, República do                  
+551Vanuatu                                    
+848Vaticano, Est. da Cidade do                
+850Venezuela                                  
+858Vietnã                                     
+863Virgens, Ilhas (Britânicas)                
+866Virgens, Ilhas (E.U.A.)                    
+875Wallis e Futuna, Ilhas                     
+890Zâmbia                                     
+665Zimbabue                                   
+0000552629
