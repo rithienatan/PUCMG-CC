@@ -111,7 +111,7 @@ function App() {
 
     if(totalTime !== null || totalTime !== "")
     {
-      let url = "https://vfqm9easj7.execute-api.sa-east-1.amazonaws.com/optimization";
+      let url = BASE_URL_ENV;
 
       let data = {
         "numTasks": numTasks,
